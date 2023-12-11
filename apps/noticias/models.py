@@ -25,4 +25,4 @@ class Comentario(models.Model):
 	fecha = models.DateTimeField(auto_now_add=True)
 
 	def __str__(self):
-		return f"{noticia}->{texto}"
+		return f"{self.noticia}->{self.texto}"

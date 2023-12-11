@@ -28,3 +28,5 @@
 
 3. Verificar que esta corriendo
   - Entrar a localhost:8000
+
+  hola
