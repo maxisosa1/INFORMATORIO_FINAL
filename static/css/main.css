@@ -1,17 +1,110 @@
 
-.contenedor{
-	background-color: rgb(242, 245, 245);
+
+@font-face {
+    font-family: 'Conthrax';
+    src: url('../fonts/conthrax-sb.otf');
 }
 
-.centrar{
-	text-align: center;
+:root {
+	--color-primary: #EEEFEE;
+	--color-secundary: #ADAAB0;
+	--color-text: #91CCDB;
+	--font-text: 'Conthrax'; 
 }
+
+
+/* Original */
+
+
+
+
 
 .bloque{
 	text-align: center;
 	padding: 100px;
+	background-color: var(--color-text);
+	min-height: 50vh
 }
-
 .submenu{
 	font-size: 18px	;
+}
+/* End Original*/
+
+
+/*Menu de navegación*/
+
+.headers {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: var(--font-text);
+	background-color: var(--color-primary);
+}
+
+.headers img {
+    margin-right: 10px; 
+}
+
+.enlace_nav {
+    margin-left: 25vw;
+	
+	
+}
+
+.enlace_nav a {
+    text-decoration: none;
+    color: #000; 
+	margin-right: 12px;
+}
+
+.enlace_nav a:hover {
+    color: var(--color-text);
+	transition: color 0.4s ease; 
+}
+
+enlace_nav strong,
+.enlace_nav a[href*="login"]:hover,
+.enlace_nav a[href*="registro"]:hover {
+    color: var(--color-text); 
+    transition: color 0.4s ease; 
+}
+
+/* End Menú de navegación */
+
+
+/* Footer */
+
+footer{
+	background-color: var(--color-primary);
+}
+
+.footerh1{
+	font-family: var(--font-text);
+	font-size: 12px;
+	margin-left: 10px;
+}
+
+.footers-m{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: var(--font-text);
+	margin-top: 0px;
+}
+
+.footers-m h3{
+	font-size: 16px;
+	margin-left: 50px;
+}
+
+.contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.contacto p{
+	font-size: 12px;
+	margin-left: 50px;
 }
