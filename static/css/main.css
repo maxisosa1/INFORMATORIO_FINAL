@@ -79,9 +79,15 @@ footer{
 }
 
 .footerh1{
+	display: flex;
 	font-family: var(--font-text);
 	font-size: 12px;
-	margin-left: 10px;
+	margin-left: 0px;
+	margin-top: 0px;
+}
+
+.footerh1 h1{
+	padding: 15px;
 }
 
 .footers-m{
@@ -107,4 +113,16 @@ footer{
 .contacto p{
 	font-size: 12px;
 	margin-left: 50px;
+
+}
+
+.contacto a {
+    text-decoration: none;
+    color: #000;
+    margin-right: 12px;
+}
+
+.contacto a:hover {
+    color: var(--color-text);
+    transition: color 0.4s ease;
 }
