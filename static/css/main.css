@@ -4,19 +4,23 @@
     font-family: 'Conthrax';
     src: url('../fonts/conthrax-sb.otf');
 }
+@font-face {
+	font-family: 'nulshock bd';
+	src: url('../fonts/nulshock\ bd.otf');
+}
 
 :root {
-	--color-primary: #EEEFEE;
+	--color-primary: #91CCDB;
 	--color-secundary: #ADAAB0;
-	--color-text: #91CCDB;
+	--color-text: #EEEFEE;
 	--font-text: 'Conthrax'; 
+	--font-text2: 'nulshock bd';
+	--color-titles: #FF5733;
+	--color-subtitles: #4285F4;
 }
 
 
 /* Original */
-
-
-
 
 
 .bloque{
@@ -28,6 +32,7 @@
 .submenu{
 	font-size: 18px	;
 }
+
 /* End Original*/
 
 
@@ -39,6 +44,10 @@
     align-items: center;
     font-family: var(--font-text);
 	background-color: var(--color-primary);
+}
+
+.headers h2{
+	color: #000;
 }
 
 .headers img {
@@ -88,6 +97,7 @@ footer{
 
 .footerh1 h1{
 	padding: 15px;
+	color: var(--color-titles);
 }
 
 .footers-m{
@@ -101,13 +111,14 @@ footer{
 .footers-m h3{
 	font-size: 16px;
 	margin-left: 50px;
+	color: var(--color-subtitles);
 }
 
 .contacto {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .contacto p{
@@ -125,4 +136,59 @@ footer{
 .contacto a:hover {
     color: var(--color-text);
     transition: color 0.4s ease;
+}
+
+/* End Footer */
+
+/* Nosotros section */
+
+.nosotros {
+    text-align: left;
+    padding: 20px;
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    border-radius: 15px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+	margin-bottom: 30px;
+}
+
+.nosotros h1, .nosotros h2 {
+    font-family: var(--font-text);
+    margin-bottom: 15px;
+    color: var(--color-text);
+	letter-spacing: 1px;
+}
+
+.nosotros p {
+    margin-bottom: 15px;
+    font-family: var(--font-text2);
+    color: var(--color-text);
+	word-spacing: 2px;
+	letter-spacing: 1px;
+}
+
+
+/* títulos Nosotros */
+.nosotros h1 {
+    font-size: 32px;
+    font-weight: bold;
+	color: var(--color-titles);
+}
+
+.nosotros h2 {
+    font-size: 24px;
+    font-weight: bold;
+	color: var(--color-subtitles);
+}
+
+/* Botón de flecha */
+
+.flecha-btn {
+    position: relative; 
+    bottom: -20px; 
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px; 
+    color: var(--color-subtitles); 
+    text-align: center; 
 }
