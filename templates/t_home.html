@@ -3,8 +3,30 @@
 
 {% block titulo %}HOME{% endblock titulo %}
 
-
 {% block contenido %}
-	<h2>HOLA SOY EL HOME CON UN CAMBIO</h2>
-{% endblock contenido %}
 
+  <div class="contenedor-noticias">
+    <div class="nosotros">
+      <h2>ÚLTIMAS NOTICIAS DESTACADAS</h2>
+    </div>
+
+    {% for noticia in noticias %}
+      <div class="noticias">
+        <img src="{{noticia.imagen.url}}" width="300" height="300">
+        <h1><a href="{% url 'noticias:detalle' noticia.pk %}">{{noticia.titulo}}</a></h1>
+        <p>{{noticia.fecha}}</p>
+        <p>CATEGORIA: {{noticia.categoria_noticia}}</p>
+        <br><br>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class= "widgets">
+	{% include "layouts/clima.html" %}
+
+	<div id="hora-actual-widget">
+		{% include "layouts/hora_chaco.html" %}
+	</div>
+  </div>
+
+{% endblock contenido %}

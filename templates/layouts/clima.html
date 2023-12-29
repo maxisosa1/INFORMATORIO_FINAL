@@ -1,0 +1,20 @@
+{% block titulo %}{% endblock titulo %}
+
+{% block contenido %}
+    <style>
+        .weatherwidget-io {
+            width: 250px; 
+            height: 350px;  
+            border: 2px solid #ccc; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+         
+            
+        }
+    </style>
+    <a class="weatherwidget-io" href="https://forecast7.com/es/n27d45n58d99/resistencia/" data-label_1="RESISTENCIA" data-label_2="Clima" data-theme="original" >RESISTENCIA Clima</a>
+    <script>
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+    </script>
+{% endblock contenido %}
+

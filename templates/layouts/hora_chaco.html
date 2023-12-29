@@ -1,0 +1,23 @@
+{% load static %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+<div id="reloj-widget">
+    <div id="reloj-contenedor">
+      <h2>Hora actual:</h2>
+      <p id="hora-actual"></p>
+    </div>
+    
+    <script>
+      function actualizarHora() {
+        var horaActual = moment().format('HH:mm:ss');
+        document.getElementById('hora-actual').textContent = horaActual;
+      }
+
+      // Actualiza la hora cada segundo
+      setInterval(actualizarHora, 1000);
+
+      // Llama a la función para mostrar la hora inicial
+      actualizarHora();
+    </script>
+  </div>
+</div>

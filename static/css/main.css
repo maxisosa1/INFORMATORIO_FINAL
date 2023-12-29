@@ -30,7 +30,28 @@
 	min-height: 50vh
 }
 .submenu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 	font-size: 18px	;
+    background-color: var(--color-titles);
+    width: 30%;
+    border-radius: 15px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 70vh;
+    margin-bottom: 20px;
+    
+}
+.submenu a{
+    text-decoration: none;
+    margin: 10px;
+    font-family: var(--font-text);
+    color:#000;
+}
+
+.submenu a:hover{
+    color: var(--color-text);
+	transition: color 0.4s ease; 
 }
 
 /* End Original*/
@@ -44,10 +65,13 @@
     align-items: center;
     font-family: var(--font-text);
 	background-color: var(--color-primary);
+    border-radius: 15px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .headers h2{
 	color: #000;
+    margin-left: 45px;
 }
 
 .headers img {
@@ -85,6 +109,8 @@ enlace_nav strong,
 
 footer{
 	background-color: var(--color-primary);
+    border-radius: 15px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .footerh1{
@@ -155,7 +181,6 @@ footer{
 .nosotros h1, .nosotros h2 {
     font-family: var(--font-text);
     margin-bottom: 15px;
-    color: var(--color-text);
 	letter-spacing: 1px;
 }
 
@@ -192,3 +217,169 @@ footer{
     color: var(--color-subtitles); 
     text-align: center; 
 }
+
+/* Nosotros section */
+
+/* Home section */
+
+.contenedor-noticias {
+    max-width: 800px;
+    display: flex;
+    flex-direction:row;
+    
+}    
+
+.noticias{
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    border-radius: 15px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+	margin-bottom: 30px;
+    margin-left: 100px;
+}
+
+.noticias p{
+    font-size: 15px;
+    font-family: var(--font-text2);
+    color: var(--color-text);
+}
+
+.noticias h1{
+    font-size: 25px;
+    font-family: var(--font-text);
+
+}
+
+.noticias h1 a {
+    text-decoration: none; 
+    color: var(--color-titles); /
+   
+}
+
+.noticias a{
+    text-decoration: none;
+    margin: 10px;
+    font-family: var(--font-text);
+    color:#000;
+}
+.noticias a:hover{
+    color: var(--color-text);
+    transition: color 0.4s ease; 
+}
+.noticias h3{
+    font-family: var(--font-text2);
+}
+.noticias h4{
+    font-size: 20px;
+}
+
+.noticias h1 a:hover {
+    color: var(--color-text);
+    transition: color 0.4s ease;
+}
+
+.noticias img{
+    border-radius: 15px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.widgets{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Horario */
+
+#reloj-widget {
+    text-align: center;
+    margin-top: 20px;
+    font-family: var(--font-text);
+    
+  }
+  
+  #reloj-contenedor {
+    background-color: var(--color-primary); 
+    padding: 100px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 100px;
+  }
+  
+  #hora-actual {
+    font-family: var(--font-text);
+    font-size: 3em;
+    font-weight: bold;
+    color: #4285F4; 
+  }
+
+/* End Horario */
+
+/* End Home Section */
+
+
+
+/* Noticias detalle section */
+
+/* Formulario de Comentarios */
+.comentario-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.comentario-form textarea {
+    width: 40%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+.comentario-form input[type="submit"] {
+    background-color: var(--color-titles);
+    color: var(--color-text);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comentario-form input[type="submit"]:hover {
+    background-color: var(--color-subtitles);
+}
+
+/* Estilo de Comentarios */
+.comentarios {
+    background-color: var(--color-titles);
+    border-radius: 15px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.comentario {
+    margin-bottom: 20px;
+}
+
+.comentario p {
+    font-family: var(--font-text2);
+    color: var(--color-text);
+}
+
+
+
+  
+  
