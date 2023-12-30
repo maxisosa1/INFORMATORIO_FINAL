@@ -14,6 +14,19 @@
 
 	</div>
 
+	<div class="filtro-noticias">
+        <form method="get">
+            <label>Filtrar por:</label>
+            <select name="filtro">
+                <option value="">Ninguno</option>
+                <option value="antiguedad_asc">Antigüedad (asc)</option>
+                <option value="antiguedad_desc">Antigüedad (desc)</option>
+                <option value="alfabetico_asc">Orden alfabético (asc)</option>
+                <option value="alfabetico_desc">Orden alfabético (desc)</option>
+            </select>
+            <input type="submit" value="Filtrar">
+        </form>
+    </div>
 	
 
 	{% for noti in noticias %}

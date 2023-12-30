@@ -381,5 +381,37 @@ footer{
 
 
 
-  
+/* Filtrado de noticias */
+
+.filtro-noticias {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.filtro-noticias select {
+    padding: 10px;
+    font-family: var(--font-text);
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.filtro-noticias button {
+    background-color: var(--color-titles);
+    color: var(--color-text);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filtro-noticias button:hover {
+    background-color: var(--color-subtitles);
+}
+
+/* End Filtrado de noticias */
   

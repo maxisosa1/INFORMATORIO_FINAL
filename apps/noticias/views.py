@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
 from django.contrib.auth.decorators import login_required
 
@@ -6,25 +6,36 @@ from .models import Noticia, Categoria, Comentario
 
 from django.urls import reverse_lazy
 
-@login_required
+
 def Listar_Noticias(request):
-	contexto = {}
+    contexto = {}
 
-	id_categoria = request.GET.get('id',None)
+    id_categoria = request.GET.get('id', None)
+    filtro = request.GET.get('filtro', None)
 
-	if id_categoria:
-		n = Noticia.objects.filter(categoria_noticia = id_categoria)
-	else:
-		n = Noticia.objects.all() #RETORNA UNA LISTA DE OBJETOS
+    if id_categoria:
+        n = Noticia.objects.filter(categoria_noticia=id_categoria)
+    else:
+        n = Noticia.objects.all()  # RETORNA UNA LISTA DE OBJETOS
 
-	contexto['noticias'] = n
+    if filtro:
+        if filtro == 'antiguedad_asc':
+            n = n.order_by('fecha')
+        elif filtro == 'antiguedad_desc':
+            n = n.order_by('-fecha')
+        elif filtro == 'alfabetico_asc':
+            n = n.order_by('titulo')
+        elif filtro == 'alfabetico_desc':
+            n = n.order_by('-titulo')
 
-	cat = Categoria.objects.all().order_by('nombre')
-	contexto['categorias'] = cat
+    contexto['noticias'] = n
 
-	return render(request, 'noticias/listar.html', contexto)
+    cat = Categoria.objects.all().order_by('nombre')
+    contexto['categorias'] = cat
 
-@login_required
+    return render(request, 'noticias/listar.html', contexto)
+
+
 def Detalle_Noticias(request, pk):
 	contexto = {}
 
@@ -48,17 +59,15 @@ def Comentar_Noticia(request):
 
 	return redirect(reverse_lazy('noticias:detalle', kwargs={'pk': noti}))
 
-#{'nombre':'name', 'apellido':'last name', 'edad':23}
-#EN EL TEMPLATE SE RECIBE UNA VARIABLE SEPARADA POR CADA CLAVE VALOR
-# nombre
-# apellido
-# edad
 
-'''
-ORM
 
-CLASE.objects.get(pk = ____)
-CLASE.objects.filter(campos = ____)
-CLASE.objects.all() ---> SELECT * FROM CLASE
 
-'''
+@login_required
+def borrar_comentario(request, comentario_id):
+    comentario = get_object_or_404(Comentario, pk=comentario_id)
+    
+    if request.user == comentario.usuario or request.user.groups.filter(name='Colaborador').exists():
+        comentario.delete()
+        return redirect('noticias:detalle', pk=comentario.noticia.pk)
+    else:
+        return render(request, "usuarios/login.html")

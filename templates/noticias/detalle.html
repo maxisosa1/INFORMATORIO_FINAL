@@ -27,7 +27,11 @@
 			<div class="comentarios">
 				{% for com in comentarios %}
 					{% if user == com.usuario %}
-						<h4><a href="">Borrar</a></h4>
+						<form method="POST" action="{% url 'noticias:borrar_comentario' comentario_id=com.id %}">
+							{% csrf_token %}
+							<input type="hidden" name="comentario_id" value="{{ com.id }}">
+							<input type="submit" value="Borrar">
+						</form>
 					{% endif %}
 					<div class="comentario">
 						<strong>FECHA:{{com.fecha}}</strong><br>

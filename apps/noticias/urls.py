@@ -11,5 +11,7 @@ urlpatterns = [
 	path('Detalle/<int:pk>', views.Detalle_Noticias, name = 'detalle'),
 	
 	path('Comentario/', views.Comentar_Noticia, name = 'comentar'),
+    
+	path('borrar_comentario/<int:comentario_id>/', views.borrar_comentario, name='borrar_comentario'),
 	
 ]
